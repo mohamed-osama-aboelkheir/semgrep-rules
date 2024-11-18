@@ -3,8 +3,10 @@ rules:
     patterns:
       - pattern: uuid.uuid1(...)
     message: |
-      Using UUID version 1 for UUID generation can lead to predictable UUIDs based on system information (e.g., MAC address, timestamp). This may lead to security risks such as the sandwich attack e.g. https://www.landh.tech/blog/20230811-sandwich-attack/. Consider using `uuid.uuid4()` instead for better randomness and security.
+      Using UUID version 1 for UUID generation can lead to predictable UUIDs based on system information (e.g., MAC address, timestamp). This may lead to security risks such as the sandwich attack. Consider using `uuid.uuid4()` instead for better randomness and security.
     metadata:
+      references:
+        - https://www.landh.tech/blog/20230811-sandwich-attack/
       cwe: 
       - 'CWE-330: Use of Insufficiently Random Values'
       owasp: 
